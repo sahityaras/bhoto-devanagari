@@ -1,0 +1,9 @@
+buildVariable: true
+familyName: Bhoto Sans Devanagari
+googleFonts: true
+includeSubsets:
+- from: Noto Sans
+  name: GF_Latin_Core
+recipeProvider: noto
+sources:
+- BhototoSansDevanagari.glyphspackage

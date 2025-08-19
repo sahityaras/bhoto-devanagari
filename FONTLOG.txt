@@ -1,0 +1,95 @@
+Bhoto devanagari font is a derivative of Noto devanagari, licensed under the SIL Open Font License. It contains BhotoSansDevanagari and BhotoSerifDevanagari. It doesnot have BhotoSansDevanagariUI. 
+
+Till now, modification are only made to the OpenType features. No new Glyphs are added. So, the changes can be known by simply comparing the fontinfo.plist files of Bhoto and Noto devanagri.
+
+Changes made by sahityaras:
+1.lookup prebase_forms:
+#sub n-deva na-deva by n_na-deva; #commented out by sahityaras
+#sub p-deva na-deva by p_na-deva; #commented out by sahityaras
+sub k-deva ta-deva by k_ta-deva.SAN; # added by sahityaras
+
+2. lookup half_forms:
+-	#sub cha-deva halant-deva by ch-deva; #commented out by sahityaras	
+-	sub ka-deva halant-deva ta-deva halant-deva by k_t-deva.SAN; #added by sahityaras
+
+
+3.lookup conjunct_forms
+ignore sub nga-deva' halant-deva' [ka-deva kha-deva ga-deva gha-deva ma-deva]' [uMatra-deva uuMatra-deva rVocalicMatra-deva rrVocalicMatra-deva halant-deva]; #added by sahityaras
+ignore sub  tta-deva' halant-deva' [tta-deva ttha-deva]' [uMatra-deva uuMatra-deva rVocalicMatra-deva rrVocalicMatra-deva halant-deva]; #added by sahityaras
+ignore sub dda-deva' halant-deva' dda-deva' [uMatra-deva uuMatra-deva rVocalicMatra-deva rrVocalicMatra-deva halant-deva]; #added by sahityaras
+ignore sub ttha-deva' halant-deva' ttha-deva' [uMatra-deva uuMatra-deva rVocalicMatra-deva rrVocalicMatra-deva halant-deva]; #added by sahityaras
+-	#sub c-deva' cha-deva' by c_cha-deva; #commented out by sahityaras
+	#sub c-deva' ch-deva' va-deva' by c_ch_va-deva; #commented out by sahityaras
+	#sub ch-deva' va-deva' by ch_va-deva; #commented out by sahityaras
+	#sub dda-deva' halant-deva' ddha-deva' by dd_ddha-deva; #commented out by sahityaras
+	#sub ddha-deva' halant-deva' ddha-deva' by ddh_ddha-deva; #commented out by sahityaras
+	#sub da-deva' halant-deva' ga-deva' by d_ga-deva; #commented out by sahityaras
+	#sub da-deva' halant-deva' gha-deva' by d_gha-deva; #commented out by sahityaras
+	#sub da-deva' halant-deva' ba-deva' by d_ba-deva; #commented out by sahityaras
+	#sub da-deva' halant-deva' bha-deva' by d_bha-deva; #commented out by sahityaras
+	#sub h-deva' nna-deva' by h_nna-deva; #commented out by sahityaras
+	#sub h-deva' na-deva' by h_na-deva; #commented out by sahityaras
+	#sub h-deva' ma-deva' by h_ma-deva; #commented out by sahityaras
+	#sub h-deva' ya-deva' by h_ya-deva; #commented out by sahityaras
+	#sub h-deva' [la-deva la-deva.MAR]' by h_la-deva; #commented out by sahityaras
+	#sub h-deva' va-deva' by h_va-deva; #commented out by sahityaras
+	#sub h-deva' m-deva' ya-deva' by h_m_ya-deva; #commented out by sahityaras
+
+
+4. Added a lookup conjuct_forms_fixes
+# conjunct_forms_fixes added by sahityaras.
+# due to ignore statement added by sahityaras are in same lookup conjunct_form, 
+# as the other conjunct, some fixes are needed
+lookup conjunct_forms_fixes{ # added by sahityaras
+	sub tta-deva' halant-deva' ya-deva' by tt_ya-deva;
+	sub ttha-deva' halant-deva' ya-deva' by tth_ya-deva;
+	sub dda-deva' halant-deva' ya-deva' by dd_ya-deva;
+	sub cha-deva' halant-deva' ya-deva' by ch_ya-deva;
+}conjunct_forms_fixes;
+
+5. added "lookup conjunct_forms_fixes;" to every language in feature cjct
+
+6. Added a feature set ccmp
+{
+code = " #--------------------------------------------------------------
+##        Addition feature set ccmp added by sahityaras
+##-----------------------------------------------------------------------
+# Nepali alternatives glyph to default 
+lookup NEP_to_dflt{
+	sub jha-deva by jha-deva.NEP;
+	sub five-deva by five-deva.NEP;
+	sub eight-deva by eight-deva.NEP;
+	sub jh_ra-deva by jh_ra-deva.NEP;
+	sub jh_ra_nukta-deva by jh_ra_nukta-deva.NEP;
+	sub jh-deva by jh-deva.NEP;
+	sub jh_nukta-deva by jh_nukta-deva.NEP;
+}NEP_to_dflt;
+
+lookup other_alternatives{
+sub visarga-deva by visarga-deva.alt;
+}other_alternatives;
+
+lookup fixes_for_conjucnt{
+sub c-deva' cha-deva' by c_cha-deva; #added by sahityaras
+}fixes_for_conjucnt;
+
+";
+tag = ccmp;
+}
+ 
+
+
+Original copyright:
+Copyright 2022 The Noto Project Authors (https://github.com/notofonts/devanagari)
+
+Modified font coyright:
+Modifications 2025 Sahityaras - OpenType features modifications
+
+This font remains under the SIL Open Font License. See OFL.txt for details
+
+
+
+
+
+
+
