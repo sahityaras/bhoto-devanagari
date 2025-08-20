@@ -2207,8 +2207,8 @@ lookup prebase_forms {
 lookup prebase_forms_NEP {
 	sub t-deva ta-deva by t_ta-deva;
 	sub t-deva t-deva by t_t-deva;
-	sub n-deva na-deva by n_na-deva;
-	sub p-deva na-deva by p_na-deva;
+	#sub n-deva na-deva by n_na-deva; #commented out by sahityaras
+	#sub p-deva na-deva by p_na-deva; #commented out by sahityaras
 	sub b-deva dha-deva by b_dha-deva;
 	sub v-deva ya-deva by v_ya-deva;
 	sub [sh-deva sh-deva.MAR] ca-deva by sh_ca-deva;

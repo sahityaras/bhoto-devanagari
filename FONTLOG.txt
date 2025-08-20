@@ -3,10 +3,15 @@ Bhoto devanagari font is a derivative of Noto devanagari, licensed under the SIL
 Till now, modification are only made to the OpenType features. No new Glyphs are added. So, the changes can be known by simply comparing the fontinfo.plist files of Bhoto and Noto devanagri.
 
 Changes made by sahityaras:
-1.lookup prebase_forms:
+1.1. lookup prebase_forms:
 #sub n-deva na-deva by n_na-deva; #commented out by sahityaras
 #sub p-deva na-deva by p_na-deva; #commented out by sahityaras
 sub k-deva ta-deva by k_ta-deva.SAN; # added by sahityaras
+
+1.2. lookup prebase_forms_NEP:
+#sub n-deva na-deva by n_na-deva; #commented out by sahityaras
+	#sub p-deva na-deva by p_na-deva; #commented out by sahityaras 
+
 
 2. lookup half_forms:
 -	#sub cha-deva halant-deva by ch-deva; #commented out by sahityaras	
